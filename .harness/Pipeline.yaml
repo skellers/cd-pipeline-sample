@@ -48,7 +48,7 @@ pipeline:
                   primary:
                     spec:
                       connectorRef: Docker
-                      imagePath: nginx/nginx
+                      imagePath: nginx
                       tag: <+input>
                     type: DockerRegistry
               type: Kubernetes
