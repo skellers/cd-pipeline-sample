@@ -24,7 +24,7 @@ pipeline:
                         store:
                           type: Github
                           spec:
-                            connectorRef: AndyGithub
+                            connectorRef: gitconnector
                             gitFetchType: Branch
                             paths:
                               - default-k8s-manifests/Manifests/Files/templates
@@ -38,7 +38,7 @@ pipeline:
                         store:
                           type: Github
                           spec:
-                            connectorRef: AndyGithub
+                            connectorRef: gitconnector
                             gitFetchType: Branch
                             paths:
                               - default-k8s-manifests/Manifests/Files/ng_values_dockercfg.yaml
@@ -47,9 +47,9 @@ pipeline:
                 artifacts:
                   primary:
                     spec:
-                      connectorRef: Docker
+                      connectorRef: dockerconnector
                       imagePath: library/nginx
-                      tag: latest
+                      tag: <+input>
                     type: DockerRegistry
               type: Kubernetes
           infrastructure:
